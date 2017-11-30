@@ -1,0 +1,10 @@
+{
+    "/api/": {
+      "target": "http://10.0.5.36:8080",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": "/api"
+      }
+    }
+  }
+  

@@ -1,0 +1,19 @@
+.login-layout{background-color: #f5f7fa; width: 100%; height: 100%}
+.login-form {
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  padding: 20px;
+  margin-left: -160px;
+  margin-top: -126px;
+  position: absolute;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}

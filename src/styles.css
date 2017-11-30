@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+.search{
+    float: left;
+    width: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
+    line-height: 30px;
+    display: block;
+    min-height: 32px;
+    max-height: 120px;
+}
+.search .left{
+    float: left
+}
+.search .right{
+    float: right
+}
+.tab{
+    float: left;
+    width: 100%;
+}

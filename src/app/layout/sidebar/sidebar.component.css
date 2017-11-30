@@ -1,0 +1,58 @@
+.sidebar{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    background: rgb(249,249,249);
+    height: calc(100% - 50px);
+    /*IE下隐藏滚动条*/
+    -ms-overflow-style:none;
+    /*火狐下隐藏滚动条*/
+    overflow:-moz-scrollbars-none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-shadow: 16px 0 15px rgba(0,0,0,.1);
+    transition: 0.48s;
+}
+.sidebar-min{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    width: 64px;
+    background: rgb(249,249,249);
+    height: calc(100% - 50px);
+    /*IE下隐藏滚动条*/
+    -ms-overflow-style:none;
+    /*火狐下隐藏滚动条*/
+    overflow:-moz-scrollbars-none;
+    /*overflow-x: hidden;*/
+    /*overflow-y: scroll;*/
+    box-shadow: 16px 0 15px rgba(0,0,0,.1);
+    transition: 0.48s;
+}
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+.sidebar-min::-webkit-scrollbar {
+    display: none;
+}
+.ant-menu-inline, .ant-menu-vertical{
+    border: none;
+}
+.ant-menu {
+    background-color: #fafafa;
+}
+.ant-menu-submenu {background-color:  #fafafa}
+.ant-menu-submenu > .ant-menu {
+    background-color: #fafafa;
+}
+/*.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {*/
+    /*background-color: #fafafa;*/
+/*}*/
+ul, ol {
+    list-style: none;
+    background-color: #fafafa;
+}
+

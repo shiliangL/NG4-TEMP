@@ -1,0 +1,57 @@
+<div class="search">
+        <div class="right">
+            <div class="left">
+                <button nz-button [nzType]="'primary'" (click)="clickShowAdd()"><span>新增</span></button>
+            </div>
+        </div>
+    </div>
+<div class="tab">
+    <nz-table #nzTable 
+    [nzAjaxData]="_dataSet"
+    [nzShowSizeChanger]="true"
+    [nzLoading]="_loading"
+    [nzTotal]="_total"
+    [(nzPageIndex)]="_current"
+    (nzPageIndexChange)="refreshData()"
+    [(nzPageSize)]="_pageSize"
+    (nzPageSizeChange)="refreshData(true)"
+    [nzSize]="'middle'"
+    [nzShowTotal]="true"
+    [nzScroll]="{ y: 300 }" [nzBordered]="true">
+        <ng-template #nzFixedHeader>
+            <thead nz-thead>
+            <tr>
+                <th nz-th><span>id</span></th>
+                <th nz-th><span>名称</span></th>
+                <th nz-th><span>英文名</span></th>
+                <th nz-th><span>链接</span></th>
+                <th nz-th><span>等级</span></th>
+                <th nz-th><span>父级id</span></th>
+                <th nz-th><span>排序</span></th>
+                <th nz-th><span>状态</span></th>
+                <th nz-th><span>创建时间</span></th>
+                <th nz-th><span>创建人</span></th>
+            </tr>
+            </thead>
+        </ng-template>
+        <tbody nz-tbody>
+            <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+                <td nz-td>{{data.id}}</td>
+                <td nz-td>{{data.name}}</td>
+                <td nz-td>{{data.ename}}</td>
+                <td nz-td>{{data.url}}</td>
+                <td nz-td>{{data.level}}</td>
+                <td nz-td>{{data.pid}}</td>
+                <td nz-td>{{data.sort}}</td>
+                <td nz-td>{{data.status}}</td>
+                <td nz-td>{{data.createTime}}</td>
+                <td nz-td>{{data.createUserName}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+</div>
+<nz-modal [nzWrapClassName]="'vertical-center-modal'" [nzFooter]="false" [nzMaskClosable]="true" [nzVisible]="isVisible" [nzTitle]="'添加菜单'" [nzContent]="modalContent" (nzOnCancel)="isVisible=false">
+    <ng-template #modalContent>
+        <menu-add *ngIf="isVisible" [operation]="childOperation" (onVoted)="onListen($event)" [menu]="updateMenu"></menu-add>
+    </ng-template>
+</nz-modal>

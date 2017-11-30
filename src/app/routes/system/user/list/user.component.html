@@ -1,0 +1,57 @@
+<div class="search">
+    <div class="left">
+        <nz-input (keyup.enter)="refreshData()" [nzType]="'search'" [nzPlaceHolder]="'input search text'" [(ngModel)]="_value" style="width: 200px;"></nz-input>
+    </div>
+    <div class="right">
+        <div class="left">
+            <button nz-button [nzType]="'primary'" (click)="clickShowAdd()"><span>新增</span></button>
+        </div>
+    </div>
+</div>
+<div class="tab">
+    <nz-table #nzTable 
+    [nzAjaxData]="_dataSet"
+    [nzShowSizeChanger]="true"
+    [nzLoading]="_loading"
+    [nzTotal]="_total"
+    [(nzPageIndex)]="_current"
+    (nzPageIndexChange)="refreshData()"
+    [(nzPageSize)]="_pageSize"
+    (nzPageSizeChange)="refreshData(true)"
+    [nzSize]="'middle'"
+    [nzShowTotal]="true"
+    [nzScroll]="{ y: 600 }">
+        <ng-template #nzFixedHeader>
+            <thead nz-thead>
+            <tr>
+                <th nz-th><span>id</span></th>
+                <th nz-th><span>用户名</span></th>
+                <th nz-th><span>年龄</span></th>
+                <th nz-th><span>密码</span></th>
+                <th nz-th><span>操作</span></th>
+            </tr>
+            </thead>
+        </ng-template>
+        <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let data of nzTable.data">
+            <td nz-td>{{data.id}}</td>
+            <td nz-td>{{data.name}}</td>
+            <td nz-td>{{data.age}}</td>
+            <td nz-td>{{data.password}}</td>
+            <td nz-td>
+                <button nz-button (click)="clickUpdateUser(data)"  [nzType]="'dashed'">
+                    <span>编辑</span>
+                </button>
+                <button (click)="clickDeleteUser(data.id)" nz-button [nzType]="'danger'">
+                    <span>删除</span>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </nz-table>
+</div>
+<nz-modal [nzWrapClassName]="'vertical-center-modal'" [nzFooter]="false" [nzMaskClosable]="true" [nzVisible]="isVisible" [nzTitle]="'添加用户'" [nzContent]="modalContent" (nzOnCancel)="isVisible=false">
+    <ng-template #modalContent>
+        <user-add *ngIf="isVisible" [operation]="childOperation" (onVoted)="onListen($event)" [user]="updateUser"></user-add>
+    </ng-template>
+</nz-modal>

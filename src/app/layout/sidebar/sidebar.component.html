@@ -1,0 +1,14 @@
+<div class="{{settings.layout.isCollapsed ? 'sidebar-min': 'sidebar'}}">
+    <ul nz-menu [nzMode]="'inline'" [nzTheme]="settings.layout" [nzInlineCollapsed]="settings.layout.isCollapsed">
+        <li nz-submenu>
+              <span title>
+                <i class="anticon anticon-appstore"></i>
+                <span>系统管理</span>
+              </span>
+            <ul>
+                <li nz-menu-item><a [routerLink]="['/system/user']">用户管理</a></li>
+                <li nz-menu-item><a [routerLink]="['/system/menu']">菜单管理</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

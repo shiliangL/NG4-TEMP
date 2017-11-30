@@ -1,0 +1,59 @@
+.header{
+    width: 100%;
+    height: 50px;
+    position: fixed!important;
+    z-index: 999;
+    background: #1976d2;
+    color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
+}
+div.logo{
+    width: 240px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    transition: 0.48s;
+}
+div.logo > img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    transition: 0.48s;
+}
+div.logo-min{
+    width: 64px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    transition: 0.48s;
+}
+div.logo-min > img {
+    transition: 0.48s;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+i.anticon{
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+div.right{
+    float: right;
+    line-height: 50px;
+    margin-right: 20px;
+}
+div.right > nz-dropdown{
+    margin-right: 10px;
+    i.anticon[_ngcontent-c3]{
+        margin-left: 3px;
+    }
+    a{color: white}
+}
+
+

@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <section class="{{settings.layout.isCollapsed ? 'section-min': 'section'}}">
+        <!-- Page content-->
+        <div class="content-wrapper">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+</div>
